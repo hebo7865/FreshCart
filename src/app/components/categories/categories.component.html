@@ -1,0 +1,17 @@
+<section>
+    <div>
+        <h1 class="text-center font-semibold text-main my-8 text-[30px] text-secondary">Categories</h1>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 py-4">
+            @for (category of categoriesList; track category._id) {
+                <div class="max-w-sm text-center bg-white border border-gray-200 rounded-lg shadow max-md:m-auto">
+                        <img class="max-md:w-80 rounded-t-lg w-full h-[350px] border-b-2 border-gray-100" [src]="category.image" [alt]="category.name" />
+                    <div class="p-5">
+                        <p class="mb-3 font-normal text-gray-700 ">{{category.name}}</p>
+                    </div>
+                </div>
+            }
+    </div>
+
+
+    </div>
+</section>

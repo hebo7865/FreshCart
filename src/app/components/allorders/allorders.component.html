@@ -1,0 +1,45 @@
+<section class="my-8 bg-main rounded-lg p-6 shadow lg:w-1/2 m-auto">
+    <h1 class="text-center font-[700] text-main my-2 text-[30px] text-secondary">All Your Orders</h1>
+
+    <owl-carousel-o [options]="orderCustomOptions">
+
+        @for (order of userOrders; track order.id) {
+        
+            <ng-template carouselSlide>
+                <div class="border-b-2 border-white">
+                <p>
+                    Order ID: {{order._id}}
+                </p>
+                <div class="flex items-center justify-between">
+                    <p>
+                        Orded at: {{order.paidAt | date: 'dd/MM/yyyy'}}
+                    </p>
+                    <p>
+                        Total Price: <span class="font-semibold text-main text-lg">{{order.totalOrderPrice | currency:'GBP'}}</span>
+                    </p>
+                </div>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-4 p-2 ">
+   
+
+                @for (item of order.cartItems; track item.product.id) {
+                    <div>
+                        <div>
+                            <img [src]="item.product.imageCover" [alt]="item.product.title">
+                        </div>
+                        <div>
+                            <p class="text-lg">{{item.product.title.split(" ", 2).join("")}}</p>
+                            <p class="font-semibold">{{item.price | currency: 'GBP'}}</p>
+                        </div>
+                    </div>
+                }
+                
+                
+                
+                </div>
+
+            </ng-template>
+        }
+      </owl-carousel-o>
+</section>

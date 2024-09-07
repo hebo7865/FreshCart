@@ -1,0 +1,35 @@
+<section class="bg-main rounded-lg shadow p-6 my-2 lg:w-1/2 m-auto">
+    <div class="my-2">
+        <h1 class="text-[30px] text-secondary font-[700] text-center">Shop Cart</h1>
+        <button (click)="clearProducts()" class="btn-main block ms-auto">Clear Cart</button>
+    </div>    
+    @for (cartItem of cartDetails.products; track cartItem.product.id) {
+        <div class="grid max-md:grid-cols-6 md:grid-cols-12 items-center mb-2 pb-2 border-b-2 border-white">
+            <div class="max-md:col-span-1 md:col-span-1">
+                <div>
+                    <img class="w-full" [src]="cartItem.product.imageCover" [alt]="cartItem.product.title">
+                </div>
+            </div>
+            <div class="max-md:col-span-5 md:col-span-11 flex items-center justify-between">
+                <div class="mx-4">
+                    <h3 class="text-[22px] font-[500] my-1">{{cartItem.product.title}}</h3>
+                    <p class="text-secondary mb-1">Price: {{cartItem.price | currency:'GBP'}}</p>
+
+                    <button [disabled]="isLoading" (click)="removeItem(cartItem.product.id)" class="cursor-pointer">
+                        <i class="fa-solid fa-trash-can text-red-700"></i>
+                    </button>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button [disabled]="isLoading" (click)="updateCount(cartItem.product.id,cartItem.count + 1)" class="text-secondary cursor-pointer"><i class="fa-solid fa-circle-plus fa-xl"></i></button>
+                    <span class="text-secondary font-semibold text-lg">{{cartItem.count}}</span>
+                    <button [disabled]="isLoading" (click)="updateCount(cartItem.product.id,cartItem.count - 1)" class="text-secondary cursor-pointer"><i class="fa-solid fa-circle-minus fa-xl"></i></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        <p>Total Price: <span class="font-[600] ms-1">{{cartDetails.totalCartPrice | currency:'GBP'}}</span></p>
+        <button [routerLink]="['/orders', cartDetails._id]" routerLinkActive="router-link-active"  class="btn-main mt-2">Orders</button>
+    </div>
+</section>

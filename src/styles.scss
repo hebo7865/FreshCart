@@ -1,1 +1,140 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import 'ngx-toastr/toastr';
+
+
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+
+:root {
+  --main-color: #C08552;
+  --secondry-color: #A56D3B;
+  --diabled-button: #a56c3b3e;
+  --bg-color: #E3E3E3;
+  --text-color: #0F110C;
+  --shadow: rgba(61, 63, 64, 0.2) 0px 2px 4px -1px,
+    rgba(61, 63, 64, 0.14) 0px 4px 5px 0px,
+    rgba(61, 63, 64, 0.12) 0px 1px 10px 0px;
+  --font-family: "Encode Sans Expanded", sans-serif;
+  --rating-color: #ffc908;
+}
+
+body {
+  font-family: var(--font-family) !important;
+  color: var(--text-color);
+}
+
+
+.nav ul li i
+{
+  color: var(--text-color);
+}
+
+.nav-link {
+  transition: unset !important;
+}
+
+.active-link {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border-radius: 5px;
+}
+
+.rating-color {
+  color: var(--rating-color);
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.product {
+  border-radius: 5px;
+  border: solid 1px var(--main-color);
+  transition: box-shadow 0.5s;
+  overflow: hidden;
+}
+
+.product:hover {
+  box-shadow: 0 0 10px #d19159;
+}
+
+.product .btn-main {
+  transform: translateY(150%);
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.9s;
+}
+
+.product:hover .btn-main{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.font-sm {
+  font-size: 12px;
+}
+.text-main {
+  color: var(--text-color);
+}
+.text-secondary {
+  color: var(--main-color);
+}
+.bg-main {
+  background-color: var(--bg-color) ;
+}
+.bg-secondry {
+  background-color: var(--secondry-color) !important;
+}
+.btn-main {
+  background-color: var(--main-color);
+  padding: 7px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.btn-main:disabled {
+  cursor: not-allowed;
+  background-color: var(--diabled-button);
+}
+.btn-main:disabled:hover {
+  background-color: var(--diabled-button);
+  color: var(--text-color);
+}
+.btn-main:hover {
+  background-color: var(--secondry-color);
+  color: white;
+}
+
+input:focus,
+textarea:focus
+{
+  border: 0;
+  box-shadow: var(--shadow) !important;
+}
+
+.form-control
+{
+  border-bottom: 5px solid var(--main-color) !important;
+  border-radius: 6px;
+  border-color: rgb(209 213 219 ) #d1d5db ;
+  margin-block: 8px;
+}
+
+.is-valid
+{
+  outline: 2px solid #31c48d;
+  border-color: #31c48d;
+}
+
+.is-invalid
+{
+  outline: 2px solid #f98080;
+  border-color: #f98080;
+}

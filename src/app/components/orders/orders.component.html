@@ -1,0 +1,20 @@
+<section class="my-8 bg-main rounded-lg p-6 shadow lg:w-1/2 m-auto">
+    <h1 class="text-center font-[700] text-main my-2 text-[30px] text-secondary">Shiping Details</h1>
+    <form [formGroup]="orders" (ngSubmit)="submitOrders()">
+        <div class="my-2 flex flex-col">
+            <label for="details">Details</label>
+            <textarea formControlName="details" id="details" placeholder="Address Details..." class="form-control"></textarea>
+        </div>
+
+        <div class="my-2 flex flex-col">
+            <label for="phone">Phone</label>
+            <input formControlName="phone" id="phone" placeholder="phone..." type="tel" class="form-control">
+        </div>
+        <div class="my-2 flex flex-col">
+            <label for="city">City</label>
+            <input formControlName="city" id="city" placeholder="city..." type="text" class="form-control">
+        </div>
+
+        <button type="submit" class="btn-main">Chech Out</button>
+    </form>
+</section>

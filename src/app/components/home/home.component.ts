@@ -107,6 +107,7 @@ export class HomeComponent implements OnInit , OnDestroy{
 addProductToWishlist(id:string):void{
   this._WishlistService.addToWislist(id).subscribe({
     next:(res)=>{
+      this._ToastrService.success(res.message, 'Succes');
     }
   })
 }

@@ -21,9 +21,6 @@ export class NavBlankComponent implements OnInit, OnDestroy {
   userCartSub!:Subscription;
 
   constructor(private _FlowbiteService:FlowbiteService){
-    this._FlowbiteService.loadFlowbite(()=>{
-
-    })
   }
 
   ngOnInit(): void {

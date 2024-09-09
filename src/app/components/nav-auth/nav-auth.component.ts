@@ -12,9 +12,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class NavAuthComponent {
 
   constructor(private _FlowbiteService:FlowbiteService){
-    this._FlowbiteService.loadFlowbite(()=>{
-
-    })
   }
 
 }

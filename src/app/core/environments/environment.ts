@@ -1,6 +1,5 @@
-const url = window.location.origin;
-
 export const environment = {
     baseUrl: 'https://ecommerce.routemisr.com',
-    serverUrl: url
+    serverUrl: 'http://localhost:4200/',
+    liveDemo: 'https://freshccart.netlify.app/'
 }

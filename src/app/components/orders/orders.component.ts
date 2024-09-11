@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { OrdersService } from '../../core/services/orders.service';
-import { error } from 'console';
 
 @Component({
   selector: 'app-orders',
@@ -27,7 +26,6 @@ export class OrdersComponent implements OnInit, OnDestroy {
   })
 
   submitOrders():void{
-    console.log(this.orders.value); 
 
     this.ordersSub = this._OrdersService.checkOut(this.cartId, this.orders.value).subscribe({
       next:(res)=>{
